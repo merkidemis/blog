@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}
+{% endblock %}
+
+{% block js %}
+{{ block.super }}
+<script src="{% static 'js/endless-pagination.js' %}"></script>
+<script>
+	$.endlessPaginate({
+		paginateOnScroll : true,
+        paginateOnScrollMargin: 20
+	});
+</script>
+{% endblock %}
+    
+{% block content %}
+
+<div id="content">
+{% include page_template %}
+</div>
+{% endblock %}

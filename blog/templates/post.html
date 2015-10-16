@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block menu %}
+<li class="withripple"  id="addCommentButton">Add Comment</li>
+{% endblock %}
+ 
+{% block content %}
+<div id="content"></div>
+<script>
+var postID = {{id}};
+var authorName = '{{authorName}}';
+</script>
+<script src="{% static 'jsx/navComment.jsx' %}" type="text/jsx"></script>
+<script src="{% static 'jsx/viewPost.jsx' %}" type="text/jsx"></script>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% load endless %}
+
+{% paginate entries %}
+{% for entry in entries %}
+    <div class="post" style="paddingBottom: 50px;" id="post{{entry.id}}">
+      	<h1>{{entry.title}}</h1>
+        <p>{{entry.body|truncatewords:75}}</p>
+        <p><a href="/blog/{{entry.id}}/">Read More</a></p> 
+	</div>
+{% endfor %}
+{% show_more %}
